@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js"
+        integrity="sha512-+BhnLgfzIDDjssoEWHPmdgWRvbwIEdj0Xfiys7uSqfQWpMEOJ4ymJ88O6B1cB0j+4zjb5GhO+sb/kEicggvUQQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Denial of Service</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Denial of Service - Auction</h1>
+        <div class="row">
+            <div class="six columns">
+                <label for="address">Your address</label>
+                <div id="address">undefined...</div>
+            </div>
+            <div class="six columns">
+                <label for="best_address">Best bidder address</label>
+                <div id="best_address">undefined...</div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label for="stored">Best Bid</label>
+                    <div id="stored">undefined...</div>
+                </div>
+                <div class="six columns">
+                    <label for="changeNumber">Bid</label>
+                    <input type="number" id="changeNumberInput" class="u-full-width" required>
+                    <input type="button" id="changeNumberInputBtn" class="button-primary" value="send">
+                </div>
+            </div>
+            <input type="button" class="button-primary" id="restore" value="restore">
+</body>
+<script src="./index.js"></script>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background: #15202B;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        word-break: break-all;
+        color: #8899A6;
+    }
+
+    input{
+        background-color: #22303C !important;
+        color: #8899A6;
+        border-color: #121212 !important;
+    }
+
+    .button-primary {
+        background: #8899A6;
+        color: #8899A6 !important;
+    }
+</style>
+
+</html>
