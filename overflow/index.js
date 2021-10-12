@@ -1,9 +1,9 @@
 let defaultAccount = null;
 let accounts = null;
 let contract = null;
-let stored = null;
+let debit = null;
+let credit = null;
 const contractAdr = "0xDd9Ce29164E752EE4975b6e0421D3d4797b0218A";
-//0xF6ef841Ed4312D17AAc5e9e6039Ee008e893fE51
 
 window.addEventListener("load", async () => {
   // New web3 provider
@@ -43,44 +43,74 @@ window.addEventListener("load", async () => {
 
   //POPULATE UI
   let refresh = async () => {
-    stored = await contract.methods
-      .prize()
+    [debit, credit] = await contract.methods
+      .retrieve()
+      .call({ from: defaultAccount })
+      .then((result) => {
+        console.log(result);
+        return [result._debit, result._credit];
+      });
+    init = await contract.methods
+      .init(defaultAccount)
       .call()
-      .then((result) => result);
-    let best_address = await contract.methods
-      ._bestBid()
-      .call()
-      .then((result) => result);
-    document.getElementById("best_address").innerText = best_address;
-    document.getElementById("stored").innerText = stored;
-    document.getElementById("changeNumberInput").value = stored;
-    document.getElementById("address").innerText = defaultAccount;
+      .then((result) => {
+        if (result) {
+          document.getElementById("setup").style.display = "block";
+          document.getElementById("smartcontract").style.display = "block";
+        } else {
+          document.getElementById("setup").style.display = "block";
+          document.getElementById("smartcontract").style.display = "none";
+        }
+      });
+    document.getElementById("debit").innerText = debit;
+    document.getElementById("credit").innerText = credit;
   };
 
   await refresh();
 
-  document
-    .getElementById("changeNumberInputBtn")
-    .addEventListener("click", () => {
-      web3.eth.sendTransaction(
-        {
-          from: defaultAccount,
-          to: contractAdr,
-          value: parseInt(document.getElementById("changeNumberInput").value),
-        },
-        () => {
-          refresh();
-        }
-      );
-    });
-  document.getElementById("restore").addEventListener("click", () => {
+  document.getElementById("begin").addEventListener("click", () => {
     contract.methods
-      .restore()
+      .begin()
       .send({
         from: defaultAccount,
       })
       .then(() => {
         refresh();
       });
+  });
+  document.getElementById("changeDebit").addEventListener("click", () => {
+    const _num = parseInt(document.getElementById("changeDebitInput").value);
+    contract.methods
+      .increaseDebit(_num)
+      .send({
+        from: defaultAccount,
+      })
+      .then(() => {
+        refresh();
+      });
+  });
+  document.getElementById("changeCredit").addEventListener("click", () => {
+    if (credit == 0) {
+      alert("This function is not working! QQ");
+      return;
+    }
+    const _num = parseInt(document.getElementById("changeCreditInput").value);
+    contract.methods
+      .decreaseCredit(_num)
+      .send({
+        from: defaultAccount,
+      })
+      .then(() => {
+        refresh();
+      });
+  });
+  document.getElementById("win").addEventListener("click", () => {
+    contract.methods
+    .win()
+    .call({ from: defaultAccount })
+    .then((result) => {
+      console.log(result);
+      alert(result)
+    });
   });
 });

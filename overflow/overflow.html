@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js"
+        integrity="sha512-+BhnLgfzIDDjssoEWHPmdgWRvbwIEdj0Xfiys7uSqfQWpMEOJ4ymJ88O6B1cB0j+4zjb5GhO+sb/kEicggvUQQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Hell Bank</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hell Bank</h1>
+    </div>
+    <div id="setup" class="container">
+        <div class="row">
+            <div class="six columns">
+                <input type="button" id="begin" value="Begin">
+            </div>
+        </div>
+    </div>
+    <div id="smartcontract" class="container">
+        <div class="row">
+            <div class="six columns">
+                <label for="debit">Your Debit</label>
+                <div id="debit">undefined...</div>
+            </div>
+            <div class="six columns">
+                <label for="credit">Your Credit</label>
+                <div id="credit">undefined...</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="six columns">
+                <label for="debitAdd">Add Debit</label>
+                <input type="number" id="changeDebitInput" class="u-full-width" required min="0" max="8">
+                <input type="button" id="changeDebit" value="Add Debit">
+            </div>
+            <div class="six columns">
+                <label for="creditRem">Less Credit</label>
+                <input type="number" id="changeCreditInput" class="u-full-width" value=0>
+                <input type="button" id="changeCredit" value="Less Credit">
+            </div>
+        </div>
+        <div class="row" align="center">
+            <input type="button" id="win" value="Claim victory">
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background: #15202B;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        word-break: break-all;
+        color: #8899A6;
+    }
+
+    input {
+        background-color: #22303C !important;
+        color: #8899A6;
+        border-color: #121212 !important;
+    }
+
+    .button-primary {
+        background: #8899A6;
+        color: #8899A6 !important;
+    }
+</style>
+
+</html>
