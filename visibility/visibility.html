@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js"
+        integrity="sha512-+BhnLgfzIDDjssoEWHPmdgWRvbwIEdj0Xfiys7uSqfQWpMEOJ4ymJ88O6B1cB0j+4zjb5GhO+sb/kEicggvUQQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Not so Private</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Not so Private</h1>
+    </div>
+    <div id="smartcontract" class="container">
+        <div class="row">
+            <div class="six columns">
+                <label for="debitAdd">Pw 1</label>
+                <input type="text" id="changeFirstInput" class="u-full-width">
+            </div>
+            <div class="six columns">
+                <label for="creditRem">Pw 2</label>
+                <input type="text" id="changeSecondInput" class="u-full-width">
+            </div>
+        </div>
+        <div class="row" align="center">
+            <input type="button" id="win" value="Claim victory">
+        </div>
+    </div>
+    <div class="container" id="windiv" style="display: none;">
+        <div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/xFpT7lMV5Mkqq0E6YM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
+    </div>
+</body>
+<script src="./index.js"></script>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background: #15202B;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        word-break: break-all;
+        color: #8899A6;
+    }
+
+    input {
+        background-color: #22303C !important;
+        color: #8899A6;
+        border-color: #121212 !important;
+    }
+
+    .button-primary {
+        background: #8899A6;
+        color: #8899A6 !important;
+    }
+</style>
+
+</html>

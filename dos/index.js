@@ -78,6 +78,7 @@ window.addEventListener("load", async () => {
       .restore()
       .send({
         from: defaultAccount,
+        value: 1000
       })
       .then(() => {
         refresh();
