@@ -1,0 +1,21 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #15202b;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  word-break: break-all;
+  color: #8899a6;
+}
+
+input {
+  background-color: #22303c !important;
+  color: #8899a6;
+  border-color: #121212 !important;
+}
+
+.button-primary {
+  background: #8899a6;
+  color: #8899a6 !important;
+}
