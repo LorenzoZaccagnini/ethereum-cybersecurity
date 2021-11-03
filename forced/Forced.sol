@@ -6,6 +6,5 @@ contract Vulnerable {
 
     function somethingBad() {
         require(this.balance > 0);
-        // Do something bad
     }
 }
