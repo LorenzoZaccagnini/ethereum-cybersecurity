@@ -2,8 +2,10 @@ let defaultAccount = null;
 let accounts = null;
 let contract = null;
 let stored = null;
-const contractAdr = "0xF6ef841Ed4312D17AAc5e9e6039Ee008e893fE51";
+const contractAdr = "0x6B6d81B7038E19Eb64945d8eff8787508373f223";
 //0xF6ef841Ed4312D17AAc5e9e6039Ee008e893fE51
+
+// new 0x6B6d81B7038E19Eb64945d8eff8787508373f223
 
 window.addEventListener("load", async () => {
   // New web3 provider
